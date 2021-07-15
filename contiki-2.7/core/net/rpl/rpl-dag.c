@@ -49,6 +49,9 @@
 #include "lib/list.h"
 #include "lib/memb.h"
 #include "sys/ctimer.h"
+#ifndef CONTIKI_DELAY
+#define CONTIKI_DELAY 1
+#endif
 
 #include <limits.h>
 #include <string.h>
