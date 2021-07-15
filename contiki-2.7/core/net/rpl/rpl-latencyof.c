@@ -113,9 +113,9 @@ neighbor_link_callback(rpl_parent_t *p, int status, int numtx){
         (unsigned)(packet_etx / RPL_DAG_MC_ETX_DIVISOR));
     p->link_metric = new_etx;
     if(packet_delay > MAX_DELAY) packet_delay = MAX_DELAY;
-    new_delay = new_delay = (recorded_delay * DLY_ALPHA +
+    new_delay = (recorded_delay * DLY_ALPHA +
 						packet_delay * (DLY_SCALE - DLY_ALPHA)) / DLY_SCALE;
-
+    p->delay_metric = new_delay;
     PRINTF("RPL: delay changed from %u to %u (packet delay = %u)\n",
         (unsigned)(recorded_delay),
         (unsigned)(new_delay),
