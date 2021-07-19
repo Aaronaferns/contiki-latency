@@ -102,7 +102,7 @@ struct rpl_metric_container {
   uint8_t aggr;
   uint8_t prec;
   uint8_t length;
-  union metric_object {
+  struct metric_object {
     struct rpl_metric_object_energy energy;
     uint16_t etx;
     #if CONTIKI_DELAY
